@@ -11,7 +11,7 @@ str_cli(FILE *fp, int sockfd)
 	 */
 	while (fgets(sendline, MAXLINE, stdin) != NULL) {
 		if (writen(sockfd, sendline, MAXLINE) < 0)
-			handle_error("writen error")
+			handle_error("writen error");
 		if (readline(sockfd, recvline, MAXLINE ) < 0)
 			handle_error("readline error");
 		if (fputs(recvline, stdout) == EOF)

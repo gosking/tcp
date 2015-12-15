@@ -6,6 +6,7 @@ str_echo(int sockfd)
 	ssize_t	n;
 	char	buf[MAXLINE];
 
+again:
 	while ( (n = readline(sockfd, buf, MAXLINE)) > 0) {
 		if (writen(sockfd, buf, n) < 0)
 			handle_error("writen error");
